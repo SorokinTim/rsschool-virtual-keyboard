@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<head>
+  <title>virtual-keyboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <textarea class="use-keyboard-input" placeholder="Click here" wrap="hard" cols="20"></textarea>
+  <div class="keyboard keyboard--hidden">
+      <div class="keyboard__keys">
+        <button type="button" class="keyboard__key" data-alternative-value="!" data-alternative-lang-value="!">1</button>
+        <button type="button" class="keyboard__key" data-alternative-value="@" data-alternative-lang-value="&#34;">2</button>
+        <button type="button" class="keyboard__key" data-alternative-value="#" data-alternative-lang-value="№">3</button>
+        <button type="button" class="keyboard__key" data-alternative-value="$" data-alternative-lang-value=";">4</button>
+        <button type="button" class="keyboard__key" data-alternative-value="%" data-alternative-lang-value="%">5</button>
+        <button type="button" class="keyboard__key" data-alternative-value="^" data-alternative-lang-value=":">6</button>
+        <button type="button" class="keyboard__key" data-alternative-value="&" data-alternative-lang-value="?">7</button>
+        <button type="button" class="keyboard__key" data-alternative-value="*" data-alternative-lang-value="*">8</button>
+        <button type="button" class="keyboard__key" data-alternative-value="(" data-alternative-lang-value="(">9</button>
+        <button type="button" class="keyboard__key" data-alternative-value=")" data-alternative-lang-value=")">0</button>
+        <button type="button" class="keyboard__key keyboard__key--wide" id="key-back">
+          <i class="material-icons">backspace</i>
+        </button>
+        <br>
+        <button type="button" class="keyboard__key" data-alternative-lang="й">q</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="ц">w</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="у">e</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="к">r</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="е">t</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="н">y</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="г">u</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="ш">i</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="щ">o</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="з">p</button>
+        <br>
+        <button type="button" class="keyboard__key keyboard__key--wide keyboard__key--activatable" id="key-caps">
+          <i class="material-icons">keyboard_capslock</i>
+        </button>
+        <button type="button" class="keyboard__key" data-alternative-lang="ф">a</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="ы">s</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="в">d</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="а">f</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="п">g</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="р">h</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="о">j</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="л">k</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="д">l</button>
+        <button type="button" class="keyboard__key keyboard__key--wide" id="key-return">
+          <i class="material-icons">keyboard_return</i>
+        </button>
+        <br>
+        <button type="button" class="keyboard__key keyboard__key--wide keyboard__key--activatable" id="key-shift">
+          <i class="material-icons">keyboard_arrow_up</i>
+        </button>
+        <button type="button" class="keyboard__key" data-alternative-lang="я">z</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="ч">x</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="с">c</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="м">v</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="и">b</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="т">n</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="ь">m</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="б">,</button>
+        <button type="button" class="keyboard__key" data-alternative-lang="ю">.</button>
+        <button type="button" class="keyboard__key">?</button>
+        <br>
+        <button type="button" class="keyboard__key keyboard__key--wide keyboard__key--dark" id="submit">
+          <i class="material-icons">check_circle</i>
+        </button>
+        <button type="button" class="keyboard__key" id="key-rec">
+          <i class="material-icons" data-alternative-icon-name="mic">mic_off</i>
+        </button>
+        <button type="button" class="keyboard__key" id="key-sound">
+          <i class="material-icons" data-alternative-icon-name="volume_off">volume_up</i>
+        </button>
+        <button type="button" class="keyboard__key keyboard__key--extra-wide" id="key-space">
+          <i class="material-icons">space_bar</i>
+        </button>
+        <button type="button" class="keyboard__key keyboard__key--wide" id="translate">
+          <i class="material-icons">translate</i>
+          <span class="keyboard__info" data-alternative-lang="RU">EN</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="keyboard__popup keyboard__popup--invisible">
+      <div class="keyboard__top">
+        <button type="button" class="keyboard__key keyboard__key--popup">
+          <i class="material-icons">keyboard_arrow_up</i>
+        </button>
+      </div>
+      <div class="keyboard__bottom">
+        <button type="button" class="keyboard__key keyboard__key--popup">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </button>
+        <button type="button" class="keyboard__key keyboard__key--popup">
+          <i class="material-icons">keyboard_arrow_down</i>
+        </button>
+        <button type="button" class="keyboard__key keyboard__key--popup">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </button>
+      </div>
+    </div>
+
+  <script src="scripts/elements.js"></script>
+  <script src="scripts/logic.js"></script>
+  <script src="scripts/events.js"></script>
+
+  <script src="scripts/welcome.js"></script>
+</body>
+</html>
